@@ -1,22 +1,22 @@
 import React from 'react';
+import Grocery from './Grocery';
 
 const GroceryList = (props) => {
+  let groceries = props.groceries.map(grocery=>{
+    return(
+      <Grocery
+        key = {grocery.id}
+        name = {grocery.name}
+        handleButtonClick = {props.handleButtonClick}
+      />
+      )
+  });
+
   return(
     <ul>
-      <li>
-        Oranges
-        <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-      </li>
-      <li>
-        Bananas
-        <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-      </li>
-      <li>
-        Bread
-        <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-      </li>
+      {groceries}
     </ul>
-  )
+  );
 }
 
 export default GroceryList;

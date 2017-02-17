@@ -7,10 +7,20 @@ class App extends React.Component {
   }
 
   render() {
+    let groceryData = [
+      {id: 1, name: "Oranges"},
+      {id: 2, name: "Bananas"},
+      {id: 3, name: "Bread"}
+    ]
+
     return(
       <div>
         <h1>Grocery List</h1>
-        <GroceryList/>
+        <form onSubmit={ (event) => { event.preventDefault(); alert('Form was submitted'); } }>
+          <input type="text" placeholder="name of grocery" />
+          <input type="submit" value="Add To List" />
+        </form>
+        <GroceryList groceries={groceryData} handleButtonClick={ (event) => { alert('Button was clicked')}}/>
       </div>
     );
   }
