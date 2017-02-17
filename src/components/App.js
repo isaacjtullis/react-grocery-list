@@ -1,5 +1,6 @@
 import React from 'react';
 import GroceryList from './GroceryList';
+import GroceryForm from './GroceryForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,10 +17,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>Grocery List</h1>
-        <form onSubmit={ (event) => { event.preventDefault(); alert('Form was submitted'); } }>
-          <input type="text" placeholder="name of grocery" />
-          <input type="submit" value="Add To List" />
-        </form>
+        <GroceryForm />
         <GroceryList groceries={groceryData} handleButtonClick={ (event) => { alert('Button was clicked')}}/>
       </div>
     );
