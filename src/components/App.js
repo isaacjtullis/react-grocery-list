@@ -1,4 +1,5 @@
 import React from 'react';
+import GroceryList from './GroceryList';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,21 +10,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>Grocery List</h1>
-
-        <ul>
-          <li>
-            Oranges
-            <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-          </li>
-          <li>
-            Bananas
-            <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-          </li>
-          <li>
-            Bread
-            <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-          </li>
-        </ul>
+        <GroceryList/>
       </div>
     );
   }
